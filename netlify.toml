@@ -1,0 +1,126 @@
+# Netlify configuration for Pankosmia client deployment
+#
+# Backend: pankosmia-docker on Railway
+# Clients: static builds served from Netlify CDN
+# API calls: proxied to the backend via redirects (status 200)
+
+[build]
+  publish = "netlify_dist"
+
+# -------------------------------------------------------------------
+# Backend URL — change this if your backend is at a different address
+# -------------------------------------------------------------------
+# Every [[redirects]] block below references this URL.
+# To change the backend, find-and-replace the Railway URL.
+
+# -------------------------------------------------------------------
+# Root → dashboard redirect
+# -------------------------------------------------------------------
+[[redirects]]
+  from = "/"
+  to = "/clients/main/"
+  status = 302
+
+# -------------------------------------------------------------------
+# API proxy rules — forward to Railway backend
+# -------------------------------------------------------------------
+
+# Burrito endpoints (content read/write)
+[[redirects]]
+  from = "/burrito/*"
+  to = "https://pankosmia-web.up.railway.app/burrito/:splat"
+  status = 200
+
+# SSE change notifications
+[[redirects]]
+  from = "/notifications"
+  to = "https://pankosmia-web.up.railway.app/notifications"
+  status = 200
+
+# User settings
+[[redirects]]
+  from = "/settings/*"
+  to = "https://pankosmia-web.up.railway.app/settings/:splat"
+  status = 200
+
+# Navigation state (BCV cursor)
+[[redirects]]
+  from = "/navigation/*"
+  to = "https://pankosmia-web.up.railway.app/navigation/:splat"
+  status = 200
+
+# App state
+[[redirects]]
+  from = "/app-state/*"
+  to = "https://pankosmia-web.up.railway.app/app-state/:splat"
+  status = 200
+
+# GitHub OAuth flow
+[[redirects]]
+  from = "/auth/*"
+  to = "https://pankosmia-web.up.railway.app/auth/:splat"
+  status = 200
+
+# Git operations
+[[redirects]]
+  from = "/git/*"
+  to = "https://pankosmia-web.up.railway.app/git/:splat"
+  status = 200
+
+# Current user identity
+[[redirects]]
+  from = "/me"
+  to = "https://pankosmia-web.up.railway.app/me"
+  status = 200
+
+# -------------------------------------------------------------------
+# SPA fallback rules — serve index.html for client-side routing
+# -------------------------------------------------------------------
+# Each client is a single-page app; deep URLs need to fall back to
+# the client's index.html. These rules must come AFTER the API
+# proxy rules (Netlify evaluates redirects in order, first match wins).
+
+[[redirects]]
+  from = "/clients/main/*"
+  to = "/clients/main/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/clients/content/*"
+  to = "/clients/content/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/clients/i18n-editor/*"
+  to = "/clients/i18n-editor/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/clients/download/*"
+  to = "/clients/download/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/clients/settings/*"
+  to = "/clients/settings/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/clients/core-local-workspace/*"
+  to = "/clients/core-local-workspace/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/clients/core-contenthandler_obs/*"
+  to = "/clients/core-contenthandler_obs/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/clients/core-contenthandler_version_manager/*"
+  to = "/clients/core-contenthandler_version_manager/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/clients/core-contenthandler-generic/*"
+  to = "/clients/core-contenthandler-generic/index.html"
+  status = 200
