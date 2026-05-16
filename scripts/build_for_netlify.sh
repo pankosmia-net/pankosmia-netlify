@@ -110,18 +110,17 @@ echo "--- Clients ---"
 mkdir -p "$DIST/clients"
 
 # Map from repo name to the homepage path (last segment)
-declare -A CLIENT_DIRS
-CLIENT_DIRS=(
-    [core-client-dashboard]="main"
-    [core-client-content]="content"
-    [core-client-i18n-editor]="i18n-editor"
-    [core-client-remote-repos]="download"
-    [core-client-settings]="settings"
-    [core-client-workspace]="core-local-workspace"
-    [core-contenthandler_obs]="core-contenthandler_obs"
-    [core-contenthandler_version_manager]="core-contenthandler_version_manager"
-    [core-contenthandler-generic]="core-contenthandler-generic"
-)
+client_dir_name() {
+    case "$1" in
+        core-client-dashboard) echo "main" ;;
+        core-client-content) echo "content" ;;
+        core-client-i18n-editor) echo "i18n-editor" ;;
+        core-client-remote-repos) echo "download" ;;
+        core-client-settings) echo "settings" ;;
+        core-client-workspace) echo "core-local-workspace" ;;
+        *) echo "$1" ;;
+    esac
+}
 
 # Count clients from app_config.env
 count=$(wc -l < "$REPO_ROOT/app_config.env")
@@ -129,10 +128,10 @@ CLIENT_COUNT=0
 CLIENT_FAIL=0
 
 for ((i=1; i<=count; i++)); do
-    eval client='$'"CLIENT$i"
+    eval client='$'"{CLIENT$i:-}"
     if [ -n "${client:-}" ]; then
         client=$(echo "$client" | tr -d ' ')
-        dir_name="${CLIENT_DIRS[$client]:-$client}"
+        dir_name=$(client_dir_name "$client")
         build_dir="$SIBLING/$client/build"
 
         if [ -d "$build_dir" ]; then
