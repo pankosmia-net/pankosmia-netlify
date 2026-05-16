@@ -96,6 +96,12 @@
   to = "https://pankosmia-web.up.railway.app/list-clients"
   status = 200
 
+# Network mode
+[[redirects]]
+  from = "/net/*"
+  to = "https://pankosmia-web.up.railway.app/net/:splat"
+  status = 200
+
 # -------------------------------------------------------------------
 # SPA fallback rules — serve index.html for client-side routing
 # -------------------------------------------------------------------
