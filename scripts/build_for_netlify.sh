@@ -40,7 +40,7 @@ echo "--- Assets ---"
 # resource-core/runtime_resources → app_resources
 if [ -d "$SIBLING/resource-core/runtime_resources" ]; then
     echo "> Copying app_resources..."
-    cp -R "$SIBLING/resource-core/runtime_resources" "$DIST/app_resources"
+    cp -R "$SIBLING/resource-core/runtime_resources" "$DIST/app-resources"
 else
     echo "WARNING: resource-core/runtime_resources not found"
 fi
@@ -88,20 +88,20 @@ fi
 
 # --- Copy theme, product, client_config ---
 echo "> Copying product config..."
-mkdir -p "$DIST/app_resources/themes"
-mkdir -p "$DIST/app_resources/product"
+mkdir -p "$DIST/app-resources/themes"
+mkdir -p "$DIST/app-resources/product"
 
 if [ -f "$REPO_ROOT/globalBuildResources/theme.json" ]; then
-    cp "$REPO_ROOT/globalBuildResources/theme.json" "$DIST/app_resources/themes/default.json"
+    cp "$REPO_ROOT/globalBuildResources/theme.json" "$DIST/app-resources/themes/default.json"
 fi
 if [ -f "$REPO_ROOT/globalBuildResources/product.json" ]; then
-    cp "$REPO_ROOT/globalBuildResources/product.json" "$DIST/app_resources/product/product.json"
+    cp "$REPO_ROOT/globalBuildResources/product.json" "$DIST/app-resources/product/product.json"
 fi
 if [ -f "$REPO_ROOT/globalBuildResources/client_config.json" ]; then
-    cp "$REPO_ROOT/globalBuildResources/client_config.json" "$DIST/app_resources/product/client_config.json"
+    cp "$REPO_ROOT/globalBuildResources/client_config.json" "$DIST/app-resources/product/client_config.json"
 fi
 if [ -d "$REPO_ROOT/globalBuildResources/product_resources" ]; then
-    cp -R "$REPO_ROOT/globalBuildResources/product_resources" "$DIST/app_resources/product/product_resources"
+    cp -R "$REPO_ROOT/globalBuildResources/product_resources" "$DIST/app-resources/product/product_resources"
 fi
 
 # --- Copy clients ---

@@ -73,6 +73,29 @@
   to = "https://pankosmia-web.up.railway.app/me"
   status = 200
 
+# i18n
+[[redirects]]
+  from = "/i18n/*"
+  to = "https://pankosmia-web.up.railway.app/i18n/:splat"
+  status = 200
+
+# Client config and interfaces
+[[redirects]]
+  from = "/client-config"
+  to = "https://pankosmia-web.up.railway.app/client-config"
+  status = 200
+
+[[redirects]]
+  from = "/client-interfaces"
+  to = "https://pankosmia-web.up.railway.app/client-interfaces"
+  status = 200
+
+# List clients
+[[redirects]]
+  from = "/list-clients"
+  to = "https://pankosmia-web.up.railway.app/list-clients"
+  status = 200
+
 # -------------------------------------------------------------------
 # SPA fallback rules — serve index.html for client-side routing
 # -------------------------------------------------------------------
