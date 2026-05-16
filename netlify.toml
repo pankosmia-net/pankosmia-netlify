@@ -102,6 +102,59 @@
   to = "https://pankosmia-web.up.railway.app/net/:splat"
   status = 200
 
+# Content utilities (templates, versifications)
+[[redirects]]
+  from = "/content-utils/*"
+  to = "https://pankosmia-web.up.railway.app/content-utils/:splat"
+  status = 200
+
+# Admin panel (PR review)
+[[redirects]]
+  from = "/admin/*"
+  to = "https://pankosmia-web.up.railway.app/admin/:splat"
+  status = 200
+
+# Temp file storage
+[[redirects]]
+  from = "/temp/*"
+  to = "https://pankosmia-web.up.railway.app/temp/:splat"
+  status = 200
+
+# Gitea integration
+[[redirects]]
+  from = "/gitea/*"
+  to = "https://pankosmia-web.up.railway.app/gitea/:splat"
+  status = 200
+
+# LLM features
+[[redirects]]
+  from = "/llm/*"
+  to = "https://pankosmia-web.up.railway.app/llm/:splat"
+  status = 200
+
+# Video generation
+[[redirects]]
+  from = "/video/*"
+  to = "https://pankosmia-web.up.railway.app/video/:splat"
+  status = 200
+
+# Debug
+[[redirects]]
+  from = "/debug/*"
+  to = "https://pankosmia-web.up.railway.app/debug/:splat"
+  status = 200
+
+# Version + health
+[[redirects]]
+  from = "/version"
+  to = "https://pankosmia-web.up.railway.app/version"
+  status = 200
+
+[[redirects]]
+  from = "/health"
+  to = "https://pankosmia-web.up.railway.app/health"
+  status = 200
+
 # -------------------------------------------------------------------
 # SPA fallback rules — serve index.html for client-side routing
 # -------------------------------------------------------------------
