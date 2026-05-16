@@ -31,11 +31,8 @@
   to = "https://pankosmia-web.up.railway.app/burrito/:splat"
   status = 200
 
-# SSE change notifications
-[[redirects]]
-  from = "/notifications"
-  to = "https://pankosmia-web.up.railway.app/notifications"
-  status = 200
+# SSE change notifications — handled by edge function (netlify/edge-functions/notifications.ts)
+# Edge functions support streaming; redirect-based proxy does not.
 
 # User settings
 [[redirects]]
