@@ -25,6 +25,7 @@ build:
 # Assemble netlify_dist/ from built clients + assets
 assemble:
 	cd $(SCRIPTS) && ./build_for_netlify.sh
+	cd $(SCRIPTS) && ./generate_static_apis.sh
 
 # Deploy to Netlify (requires `netlify link` first time)
 # Omit --dir so the CLI reads netlify.toml and picks up edge functions

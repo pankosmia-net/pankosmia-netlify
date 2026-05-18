@@ -12,11 +12,30 @@
   function = "notifications"
   path = "/notifications"
 
+[[headers]]
+  for = "/api/*.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "public, max-age=60"
+
 # -------------------------------------------------------------------
 # Backend URL — change this if your backend is at a different address
 # -------------------------------------------------------------------
 # Every [[redirects]] block below references this URL.
 # To change the backend, find-and-replace the Railway URL.
+
+# -------------------------------------------------------------------
+# Static API responses (served from Netlify, not proxied to Railway)
+# -------------------------------------------------------------------
+[[redirects]]
+  from = "/client-interfaces"
+  to = "/api/client-interfaces.json"
+  status = 200
+
+[[redirects]]
+  from = "/list-clients"
+  to = "/api/list-clients.json"
+  status = 200
 
 # -------------------------------------------------------------------
 # Root → dashboard redirect
@@ -87,21 +106,10 @@
   to = "https://pankosmia-web.up.railway.app/i18n/:splat"
   status = 200
 
-# Client config and interfaces
+# Client config (still proxied to Railway)
 [[redirects]]
   from = "/client-config"
   to = "https://pankosmia-web.up.railway.app/client-config"
-  status = 200
-
-[[redirects]]
-  from = "/client-interfaces"
-  to = "https://pankosmia-web.up.railway.app/client-interfaces"
-  status = 200
-
-# List clients
-[[redirects]]
-  from = "/list-clients"
-  to = "https://pankosmia-web.up.railway.app/list-clients"
   status = 200
 
 # Network mode
