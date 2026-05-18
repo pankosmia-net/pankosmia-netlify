@@ -6,6 +6,11 @@
 
 [build]
   publish = "netlify_dist"
+  edge_functions = "netlify/edge-functions"
+
+[[edge_functions]]
+  function = "notifications"
+  path = "/notifications"
 
 # -------------------------------------------------------------------
 # Backend URL — change this if your backend is at a different address
@@ -50,6 +55,12 @@
 [[redirects]]
   from = "/app-state/*"
   to = "https://pankosmia-web.up.railway.app/app-state/:splat"
+  status = 200
+
+# User language management (claim, switch, current language)
+[[redirects]]
+  from = "/user-languages/*"
+  to = "https://pankosmia-web.up.railway.app/user-languages/:splat"
   status = 200
 
 # GitHub OAuth flow
@@ -97,6 +108,12 @@
 [[redirects]]
   from = "/net/*"
   to = "https://pankosmia-web.up.railway.app/net/:splat"
+  status = 200
+
+# GitHub webhooks (catalog + per-language)
+[[redirects]]
+  from = "/webhook/*"
+  to = "https://pankosmia-web.up.railway.app/webhook/:splat"
   status = 200
 
 # Content utilities (templates, versifications)

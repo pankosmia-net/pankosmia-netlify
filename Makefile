@@ -17,8 +17,9 @@ assemble:
 	cd $(SCRIPTS) && ./build_for_netlify.sh
 
 # Deploy to Netlify (requires `netlify link` first time)
+# Omit --dir so the CLI reads netlify.toml and picks up edge functions
 deploy:
-	netlify deploy --dir=netlify_dist --prod
+	netlify deploy --prod
 
 # Full pipeline: build clients, assemble, deploy
 all: build assemble deploy
