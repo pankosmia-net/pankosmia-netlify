@@ -1,0 +1,6 @@
+# Netlify CLI uses this instead of .gitignore when deploying.
+# netlify_dist/ is intentionally NOT listed here so it gets uploaded.
+.git
+node_modules
+.idea
+.claude

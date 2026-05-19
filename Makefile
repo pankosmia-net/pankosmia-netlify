@@ -30,7 +30,7 @@ assemble:
 # Deploy to Netlify (requires `netlify link` first time)
 # Omit --dir so the CLI reads netlify.toml and picks up edge functions
 deploy:
-	netlify deploy --prod --skip-gitignore
+	netlify deploy --prod
 
 # Full pipeline: build clients, assemble, deploy
 all: build assemble deploy
@@ -46,7 +46,7 @@ endif
 	cp -R $(SIBLING)/$(CLIENT)/build netlify_dist/clients/$(call client_dir,$(CLIENT))
 	@test -f globalBuildResources/favicon.ico && \
 		cp globalBuildResources/favicon.ico netlify_dist/clients/$(call client_dir,$(CLIENT))/ || true
-	netlify deploy --prod --skip-gitignore
+	netlify deploy --prod
 
 # Remove build output
 clean:
