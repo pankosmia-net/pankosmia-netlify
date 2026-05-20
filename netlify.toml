@@ -88,6 +88,12 @@
   to = "https://pankosmia-web.up.railway.app/auth/:splat"
   status = 200
 
+# User resources
+[[redirects]]
+  from = "/user-resources/*"
+  to = "https://pankosmia-web.up.railway.app/user-resources/:splat"
+  status = 200
+
 # Git operations
 [[redirects]]
   from = "/git/*"
