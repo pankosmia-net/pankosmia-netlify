@@ -52,7 +52,7 @@
 # Burrito endpoints (content read/write)
 [[redirects]]
   from = "/burrito/*"
-  to = "https://pankosmia-web.up.railway.app/burrito/:splat"
+  to = "https://pankosmia.up.qombi.com/burrito/:splat"
   status = 200
 
 # SSE change notifications — handled by edge function (netlify/edge-functions/notifications.ts)
@@ -61,126 +61,126 @@
 # User settings
 [[redirects]]
   from = "/settings/*"
-  to = "https://pankosmia-web.up.railway.app/settings/:splat"
+  to = "https://pankosmia.up.qombi.com/settings/:splat"
   status = 200
 
 # Navigation state (BCV cursor)
 [[redirects]]
   from = "/navigation/*"
-  to = "https://pankosmia-web.up.railway.app/navigation/:splat"
+  to = "https://pankosmia.up.qombi.com/navigation/:splat"
   status = 200
 
 # App state
 [[redirects]]
   from = "/app-state/*"
-  to = "https://pankosmia-web.up.railway.app/app-state/:splat"
+  to = "https://pankosmia.up.qombi.com/app-state/:splat"
   status = 200
 
 # User language management (claim, switch, current language)
 [[redirects]]
   from = "/user-languages/*"
-  to = "https://pankosmia-web.up.railway.app/user-languages/:splat"
+  to = "https://pankosmia.up.qombi.com/user-languages/:splat"
   status = 200
 
 # GitHub OAuth flow
 [[redirects]]
   from = "/auth/*"
-  to = "https://pankosmia-web.up.railway.app/auth/:splat"
+  to = "https://pankosmia.up.qombi.com/auth/:splat"
   status = 200
 
 # User resources
 [[redirects]]
   from = "/user-resources/*"
-  to = "https://pankosmia-web.up.railway.app/user-resources/:splat"
+  to = "https://pankosmia.up.qombi.com/user-resources/:splat"
   status = 200
 
 # Git operations
 [[redirects]]
   from = "/git/*"
-  to = "https://pankosmia-web.up.railway.app/git/:splat"
+  to = "https://pankosmia.up.qombi.com/git/:splat"
   status = 200
 
 # Current user identity
 [[redirects]]
   from = "/me"
-  to = "https://pankosmia-web.up.railway.app/me"
+  to = "https://pankosmia.up.qombi.com/me"
   status = 200
 
 # i18n
 [[redirects]]
   from = "/i18n/*"
-  to = "https://pankosmia-web.up.railway.app/i18n/:splat"
+  to = "https://pankosmia.up.qombi.com/i18n/:splat"
   status = 200
 
 # Client config (still proxied to Railway)
 [[redirects]]
   from = "/client-config"
-  to = "https://pankosmia-web.up.railway.app/client-config"
+  to = "https://pankosmia.up.qombi.com/client-config"
   status = 200
 
 # Network mode
 [[redirects]]
   from = "/net/*"
-  to = "https://pankosmia-web.up.railway.app/net/:splat"
+  to = "https://pankosmia.up.qombi.com/net/:splat"
   status = 200
 
 # GitHub webhooks (catalog + per-language)
 [[redirects]]
   from = "/webhook/*"
-  to = "https://pankosmia-web.up.railway.app/webhook/:splat"
+  to = "https://pankosmia.up.qombi.com/webhook/:splat"
   status = 200
 
 # Content utilities (templates, versifications)
 [[redirects]]
   from = "/content-utils/*"
-  to = "https://pankosmia-web.up.railway.app/content-utils/:splat"
+  to = "https://pankosmia.up.qombi.com/content-utils/:splat"
   status = 200
 
 # Admin panel (PR review)
 [[redirects]]
   from = "/admin/*"
-  to = "https://pankosmia-web.up.railway.app/admin/:splat"
+  to = "https://pankosmia.up.qombi.com/admin/:splat"
   status = 200
 
 # Temp file storage
 [[redirects]]
   from = "/temp/*"
-  to = "https://pankosmia-web.up.railway.app/temp/:splat"
+  to = "https://pankosmia.up.qombi.com/temp/:splat"
   status = 200
 
 # Gitea integration
 [[redirects]]
   from = "/gitea/*"
-  to = "https://pankosmia-web.up.railway.app/gitea/:splat"
+  to = "https://pankosmia.up.qombi.com/gitea/:splat"
   status = 200
 
 # LLM features
 [[redirects]]
   from = "/llm/*"
-  to = "https://pankosmia-web.up.railway.app/llm/:splat"
+  to = "https://pankosmia.up.qombi.com/llm/:splat"
   status = 200
 
 # Video generation
 [[redirects]]
   from = "/video/*"
-  to = "https://pankosmia-web.up.railway.app/video/:splat"
+  to = "https://pankosmia.up.qombi.com/video/:splat"
   status = 200
 
 # Debug
 [[redirects]]
   from = "/debug/*"
-  to = "https://pankosmia-web.up.railway.app/debug/:splat"
+  to = "https://pankosmia.up.qombi.com/debug/:splat"
   status = 200
 
 # Version + health
 [[redirects]]
   from = "/version"
-  to = "https://pankosmia-web.up.railway.app/version"
+  to = "https://pankosmia.up.qombi.com/version"
   status = 200
 
 [[redirects]]
   from = "/health"
-  to = "https://pankosmia-web.up.railway.app/health"
+  to = "https://pankosmia.up.qombi.com/health"
   status = 200
 
 # -------------------------------------------------------------------
